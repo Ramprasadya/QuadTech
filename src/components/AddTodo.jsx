@@ -24,7 +24,7 @@ const AddTodo = () => {
             <label htmlFor="exampleInputEmail1" className="form-label">
               Add Your To-Do
             </label>
-            <textarea type="text" className="form-control"
+            <textarea type="text" className="form-control" placeholder="Click here to add your to-do"
             value={input}
             onChange={(e)=>setInput(e.target.value)}
              />
