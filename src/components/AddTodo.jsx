@@ -22,14 +22,14 @@ const AddTodo = () => {
         <form onSubmit={handelFormSubmit} >
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
-              Add Your To-Do
+              Add Your To-Do  -  write at least 5 character 
             </label>
             <textarea type="text" className="form-control" placeholder="Click here to add your to-do"
             value={input}
             onChange={(e)=>setInput(e.target.value)}
              />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button disabled={input.length < 5} type="submit" className="btn btn-primary">
            Add Note
           </button>
         </form>
