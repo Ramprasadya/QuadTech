@@ -1,26 +1,24 @@
-import React from 'react'
-import { useDispatch , useSelector } from 'react-redux'
-import { removeTodo, updateTodo } from '../features/todo/todoSlice'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { removeTodo, updateTodo } from "../features/todo/todoSlice";
+import Card from "./Card";
 
 const Todo = () => {
-    const Disapatch = useDispatch()
-   const todos =  useSelector((state)=> state.todos )
+  const Disapatch = useDispatch();
+  // Here we are finding the todos array from todoslice file
+  const todos = useSelector((state) => state.todos);
   return (
-   <>
-   <div>
-    <h2>Todos</h2>
-     {
-      todos.map((todo)=>{
-        return <div key={todo.id} >
-            {todo.text}
-            <button onClick={()=> Disapatch(updateTodo(todo.id)) } >Edit</button>
-            <button onClick={()=> Disapatch(removeTodo(todo.id)) } >remove</button>
-        </div>
-      })
-     }
-   </div>
-   </>
-  )
-}
+    <>
+      <div className="container mt-4 ">
+        <h4 className="" >Your Todos will Display Here  </h4>
+       <div className="row">
+       {todos.map((todo) => {
+          return <Card todo={todo} />
+        })}
+       </div>
+      </div>
+    </>
+  );
+};
 
-export default Todo
+export default Todo;

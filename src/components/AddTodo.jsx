@@ -8,9 +8,12 @@ const AddTodo = () => {
 
     const handelFormSubmit=(e)=>{
     e.preventDefault()
+    // Here we are saving the todo or executing the function
     Dispatch(addTodo(input))
+    // Clearing the input box 
     setInput("")
     }
+    
 
 
   return (
@@ -21,13 +24,13 @@ const AddTodo = () => {
             <label htmlFor="exampleInputEmail1" className="form-label">
               Add Your To-Do
             </label>
-            <input type="text" className="form-control"
+            <textarea type="text" className="form-control"
             value={input}
             onChange={(e)=>setInput(e.target.value)}
              />
           </div>
           <button type="submit" className="btn btn-primary">
-            Submit
+           Add Note
           </button>
         </form>
       </div>

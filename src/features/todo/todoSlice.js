@@ -13,6 +13,7 @@ export const todoSlice = createSlice({
         // Add Todo Logic
         addTodo : (state,action)=>{
          const todo ={
+            // naoid is react-redux inbuild function that provide the  uniqe  id 
             id : nanoid(),
             text : action.payload
          }
